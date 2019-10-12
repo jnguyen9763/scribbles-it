@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  background-color: LightGray;
 }
 
 nav {
@@ -12,6 +12,7 @@ nav {
   height: 10vh;
   z-index: 300;
   text-align: center;
+  box-shadow: 3px 7px 7px rgba(0, 0, 0, 0.3);
   color: Khaki;
   text-shadow: 3px 3px Brown;
 }
@@ -41,10 +42,10 @@ p {
 }
 
 #canvas {
-  border: 2px solid Black;
   flex-grow: 2;
   height: 70vh;
   width: 80vw;
+  box-shadow: 0 7px 7px rgba(0, 0, 0, 0.3);
 }
 
 #toolbar {
