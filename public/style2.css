@@ -89,3 +89,9 @@ img {
 footer {
   color: gray;
 }
+
+@media (max-height: 700px) {
+  h1 {
+    font-size: 5em;
+  }
+}
