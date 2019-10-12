@@ -37,7 +37,7 @@ socket.on('clear',function() {
 });
 
 socket.on('winner', function(points) {
-  alert('You are the winner! You currently have ' + points + ' points.');
+  score.innerHTML = "Score: " + points;
   socket.emit('reset game');
 });
 
