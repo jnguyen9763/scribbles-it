@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Mansalva&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="paintapp.js" defer></script>
+    <title>Scribbles It!</title>
+  </head>
+  <body>
+    <nav>
+      <p>Scribbles It!</p>
+    </nav>
+    <div id="main">
+      <div id="drawing-area">
+        <div id="canvas"></div>
+        <div id="toolbar"></div>
+      </div>
+      <div id="chatbox">
+        <div class="message-box">
+          <ul id="messages"></ul>
+        </div>
+        <form>
+            <input id='text' autocomplete="off" placeholder="Say hello!"/>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
