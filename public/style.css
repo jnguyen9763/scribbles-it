@@ -187,7 +187,7 @@ form {
 }
 
 
-@media (max-height: 620px) {
+@media (max-height: 680px) {
   p {
     margin-top: 0;
   }
