@@ -17,6 +17,14 @@ nav {
   text-shadow: 3px 3px Brown;
 }
 
+a {
+  text-decoration: none;
+  color: Khaki;
+}
+a:hover {
+  text-shadow: 5px 5px DimGray;
+}
+
 p {
   font-size: 5em;
   margin: 0;
