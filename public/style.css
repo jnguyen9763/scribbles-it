@@ -1,5 +1,5 @@
 body {
-  background-color: LightGray;
+  background-color: FloralWhite;
 }
 
 nav {
@@ -18,7 +18,7 @@ nav {
 }
 
 p {
-  font-size: 4em;
+  font-size: 5em;
   margin: 0;
   margin-top: 3.5vh;
 }
@@ -36,14 +36,21 @@ p {
 }
 
 #canvas {
+  border-radius: 10px;
   flex-grow: 2;
   height: 70vh;
   width: 80vw;
   box-shadow: 0 7px 7px rgba(0, 0, 0, 0.3);
 }
 
+canvas {
+  border-radius: 10px;
+}
+
 #toolbar {
-  border: 2px solid Black;
+  box-shadow: 2px 7px 7px rgba(0, 0, 0, 0.3);
+  background-color: PeachPuff;
+  border-radius: 5px;
   height: 10vh;
   width: 80vw;
   margin-top: 1%;
@@ -55,6 +62,7 @@ p {
   justify-content: space-between;
   overflow: hidden;
   box-shadow: 2px 7px 7px rgba(0, 0, 0, 0.3);
+  background-color: White;
   border-radius: 5px;
   height: 85vh;
   width: 20vw;
@@ -68,6 +76,7 @@ form {
 
 #text {
   border: none;
+  border: 2px solid Gray;
   border-radius: 5px;
   padding: 1.5vh;
   font-size: 15px;
@@ -87,7 +96,7 @@ form {
 }
 
 #messages li:nth-child(odd) {
-  background: #eee;
+  background: Linen;
 }
 
 
