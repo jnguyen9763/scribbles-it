@@ -8,6 +8,8 @@ const PORT = process.env.PORT || 5000
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public/game.html')))
+app.get('/paint', (req, res) => res.sendFile(path.join(__dirname, '/public/paint.html')))
+
 
 var players = [];
 var gameRunning = false;
