@@ -41,6 +41,7 @@ socket.on('drawer', function() {
 socket.on('reset drawer', function() {
   isDrawer = false;
   canvas.clear();
+  canvas.background('#FFF');
 });
 
 socket.on('winner', function() {
