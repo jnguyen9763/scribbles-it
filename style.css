@@ -22,6 +22,12 @@ p {
   margin-top: 3.5vh;
 }
 
+@media (max-height: 620px) {
+  p {
+    margin-top: 0;
+  }
+}
+
 #main {
   margin-top: 12vh;
   display: flex;
