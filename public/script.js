@@ -18,9 +18,6 @@ function setup() {
 
 }
 
-function draw() {
-}
-
 function mouseDragged() {
   stroke(brushColor);
   strokeWeight(strokeWidth);
