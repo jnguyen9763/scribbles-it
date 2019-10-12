@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 5000
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/game.html')))
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public/game.html')))
 
 io.on('connection', function(socket){
   console.log('a user connected');
