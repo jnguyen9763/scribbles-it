@@ -1,0 +1,91 @@
+body {
+  background-image: linear-gradient(IndianRed 60%, NavajoWhite);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Nunito', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  margin-top: 3%;
+  font-family: 'Mansalva', cursive;
+  color: Khaki;
+  text-shadow: 3px 5px Brown;
+  font-size: 120px;
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, -0px); }
+}
+
+#description {
+  font-size: 17px;
+}
+
+#paint a {
+  text-decoration: none;
+  color: SteelBlue;
+}
+
+#game a {
+  text-decoration: none;
+  color: IndianRed;
+}
+
+#title {
+  font-size: 30px;
+  margin: 0;
+}
+
+#rooms {
+  margin-top: -3vh;
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+}
+
+
+#paint {
+  color: SteelBlue;
+  background-color: AntiqueWhite;
+  border-radius: 10px;
+  padding: 1%;
+  margin: 0 2vw;
+  width: 40vw;
+}
+
+#game {
+  color: IndianRed;
+  background-color: AntiqueWhite;
+  border-radius: 10px;
+  padding: 1%;
+  margin: 0 2vw;
+  width: 40vw;
+}
+
+#paint:hover {
+  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.3);
+}
+
+#game:hover {
+  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+img {
+  border-radius: 10px;
+  width: 100%;
+}
+
+footer {
+  color: gray;
+}
