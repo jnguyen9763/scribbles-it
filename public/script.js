@@ -11,6 +11,7 @@ function setup() {
   background('#FFF');
 
   socket.on('mouse', data => {
+    console.log("test");
     stroke(data.color);
     strokeWeight(data.strokeWidth);
     line(data.x, data.y, data.px, data.py);
@@ -31,7 +32,7 @@ function sendMouse(x, y, pX, pY) {
     y: y,
     px: pX,
     py: pY,
-    color: color,
+    color: brushColor,
     strokeWidth: strokeWidth
   }
   socket.emit('mouse', data);
