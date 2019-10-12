@@ -34,10 +34,14 @@ app.get('/paint/:id', (req, res) => res.sendFile('paint.html', {root: __dirname 
 
 io.on('connection', function(socket) {
   console.log('a user connected');
-  var player = new Object();
-  player.socket = socket.id;
-  player.points = 0;
-  players.push(player);
+
+  socket.on('new player', function() {
+    var player = new Object()
+    player.socket = socket.id
+    player.points = 0
+    players.push(player)
+    console.log(players);
+  })
 
   if (players.length > 1 && !gameRunning) {
     gameRunning = true
