@@ -10,13 +10,13 @@ function setup() {
   canvas.parent('canvas');
   background('#FFF');
 
-  socket.on('mouse', data => {
-    console.log("test");
-    stroke(data.color);
-    strokeWeight(data.strokeWidth);
-    line(data.x, data.y, data.px, data.py);
-  })
+  socket.on('mouse', newDrawing);
+}
 
+function newDrawing(data) {
+  stroke(data.color);
+  strokeWeight(data.strokeWidth);
+  line(data.x, data.y, data.px, data.py);
 }
 
 function mouseDragged() {
