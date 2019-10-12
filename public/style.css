@@ -48,12 +48,90 @@ canvas {
 }
 
 #toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
   box-shadow: 2px 7px 7px rgba(0, 0, 0, 0.3);
   background-color: PeachPuff;
   border-radius: 5px;
   height: 10vh;
   width: 80vw;
   margin-top: 1%;
+}
+
+.colorbutton {
+  padding: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin: 0 0.25vw;
+}
+
+.brushbutton {
+  cursor: pointer;
+  border: none;
+  border-radius: 100%;
+  margin: 0 0.4vw;
+  background-color: #000000;
+}
+
+#blue {
+  background-color: #55acee;
+  box-shadow: 0px 5px 0px 0px #3C93D5;
+}
+
+#green {
+  background-color: #2ecc71;
+  box-shadow: 0px 5px 0px 0px #15B358;
+}
+
+#red {
+  background-color: #e74c3c;
+  box-shadow: 0px 5px 0px 0px #CE3323;
+}
+
+#orange {
+  background-color: #e67e22;
+  box-shadow: 0px 5px 0px 0px #CD6509;
+}
+
+#yellow {
+  background-color: #f1c40f;
+  box-shadow: 0px 5px 0px 0px #D8AB00;
+}
+
+#black {
+  background-color: #353839;
+  box-shadow: 0px 5px 0px 0px #000000;
+}
+
+#small {
+  padding: 10px;
+}
+
+#medium {
+  padding: 15px;
+}
+
+#big {
+  padding: 20px;
+}
+
+#erase-button {
+  border: none;
+  background: url('images/eraser.png') no-repeat;
+  padding: 25px;
+  cursor: pointer;
+}
+
+#clear-button {
+  cursor: pointer;
+  border: none;
+  font-family: 'Nunito', cursive;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 #chatbox {
