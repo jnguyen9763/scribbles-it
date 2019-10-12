@@ -40,19 +40,18 @@ io.on('connection', function(socket) {
     player.socket = socket.id
     player.points = 0
     players.push(player)
-    console.log(players);
-  })
 
-  if (players.length > 1 && !gameRunning) {
-    gameRunning = true
-    var id = players[Math.floor(Math.random() * Math.floor(players.length))].socket
-    if (socket.id === id) {
-      socket.emit('drawer');
+    if (players.length > 1 && !gameRunning) {
+      gameRunning = true
+      var id = players[Math.floor(Math.random() * Math.floor(players.length))].socket
+      if (socket.id === id) {
+        socket.emit('drawer');
+      }
+      else {
+        socket.broadcast.to(id).emit('drawer')
+      }
     }
-    else {
-      socket.broadcast.to(id).emit('drawer')
-    }
-  }
+  })
 
   socket.on('mouse', (data) => socket.broadcast.emit('mouse', data))
   socket.on('word', (w) => word = w)
