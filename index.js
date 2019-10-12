@@ -15,11 +15,14 @@ var word = "";
 
 io.on('connection', function(socket) {
   console.log('a user connected');
-  players.push(socket.id);
+  var player = new Object();
+  player.socket = socket.id;
+  player.points = 0;
+  players.push(player);
 
   if (players.length > 1 && !gameRunning) {
     gameRunning = true
-    var id = players[Math.floor(Math.random() * Math.floor(players.length))]
+    var id = players[Math.floor(Math.random() * Math.floor(players.length))].socket
     if (socket.id === id) {
       socket.emit('drawer');
     }
@@ -34,7 +37,7 @@ io.on('connection', function(socket) {
   socket.on('reset game', function() {
     io.emit('reset drawer');
     if (players.length > 1) {
-      var id = players[Math.floor(Math.random() * Math.floor(players.length))]
+      var id = players[Math.floor(Math.random() * Math.floor(players.length))].socket
       if (socket.id === id) {
         socket.emit('drawer');
       }
@@ -49,7 +52,13 @@ io.on('connection', function(socket) {
 
   socket.on('chat message', function(msg) {
     if (msg === word) {
-      socket.emit('winner')
+      for (var i = 0; i < players.length; i++) {
+        if (players[i].socket == socket.id) {
+          players[i].points += 5;
+          socket.emit('winner', players[i].points);
+          break;
+        }
+      }
     }
     io.emit('chat message', msg)
   })
@@ -57,7 +66,7 @@ io.on('connection', function(socket) {
   socket.on('disconnect', function() {
     console.log('Client has disconnected');
     for (var i = 0; i < players.length; i++) {
-      if (players[i] == socket.id) {
+      if (players[i].socket == socket.id) {
         players.splice(i, 1);
         break;
       }

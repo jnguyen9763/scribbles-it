@@ -44,8 +44,8 @@ socket.on('reset drawer', function() {
   canvas.background('#FFF');
 });
 
-socket.on('winner', function() {
-  alert('You are the winner!');
+socket.on('winner', function(points) {
+  alert('You are the winner! You currently have ' + points + ' points.');
   socket.emit('reset game');
 });
 
