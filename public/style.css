@@ -18,7 +18,7 @@ nav {
 }
 
 p {
-  font-size: 6em;
+  font-size: 5em;
   margin: 0;
   margin-top: 1.5vh;
 }
@@ -187,8 +187,9 @@ form {
 }
 
 
-@media (max-height: 620px) {
+@media (max-height: 700px) {
   p {
+    font-size: 4em;
     margin-top: 0;
   }
 }
