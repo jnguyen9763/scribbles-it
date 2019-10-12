@@ -13,6 +13,7 @@ function setup() {
   canvas.parent('canvas');
   background('#FFF');
   socket.on('mouse', newDrawing);
+  socket.emit('new player');
 }
 
 socket.on('chat message', function(msg) {
