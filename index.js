@@ -11,6 +11,8 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public/game.html'
 
 io.on('connection', function(socket){
   console.log('a user connected');
+  socket.on('mouse', (data) => socket.broadcast.emit('mouse', data))
+  socket.on('disconnect', () => console.log('Client has disconnected'))
 });
   
 http.listen(PORT, () => console.log(`Listening on ${ PORT }`))
