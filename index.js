@@ -15,10 +15,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => res.sendFile('index.html', {root: __dirname + '/public/'}))
 app.get('/game', (req, res) => res.sendFile('game.html', {root: __dirname + '/public/'}))
-app.post('/paint', (req, res) => res.sendFile('paint.html', {root: __dirname + '/public/'}))
+app.get('/paint', (req, res) => res.sendFile('paint.html', {root: __dirname + '/public/'}))
 /*
 app.get('/game', (req, res) => res.redirect('/game/' + uuid()));
-app.post('/paint', (req, res) => res.send('/paint/' + uuid()));
+app.get('/paint', (req, res) => res.send('/paint/' + uuid()));
 app.get('/game/:id', function(req, res) {
   res.sendFile('game.html', {root: __dirname + '/public/'})
   var room = new Object();
