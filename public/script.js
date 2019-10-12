@@ -1,5 +1,16 @@
 var socket = io();
 
+function sendMessage(event) {
+  event.preventDefault();
+  var msg = document.querySelector('#text').value;
+  document.querySelector('#text').value = '';
+  if (/\S/.test(msg))
+    socket.emit('chat message', msg);
+}
+
+const form = document.querySelector('form');
+form.addEventListener('submit', sendMessage);
+
 var brushColor = '#000';
 var strokeWidth = 15;
 
@@ -12,6 +23,10 @@ function setup() {
 
   socket.on('mouse', newDrawing);
 }
+
+socket.on('chat message', function(msg){
+  $('#messages').prepend($('<li>').text(msg));
+});
 
 function newDrawing(data) {
   stroke(data.color);
