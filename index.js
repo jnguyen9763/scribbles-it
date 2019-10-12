@@ -30,9 +30,11 @@ io.on('connection', function(socket) {
 
   socket.on('mouse', (data) => socket.broadcast.emit('mouse', data))
   socket.on('word', (w) => word = w)
+  socket.on('clear', () => io.emit('clear'))
 
   socket.on('reset game', function() {
     io.emit('reset drawer');
+    io.emit('clear');
     if (players.length > 1) {
       var id = players[Math.floor(Math.random() * Math.floor(players.length))]
       if (socket.id === id) {
@@ -67,7 +69,7 @@ io.on('connection', function(socket) {
       gameRunning = false;
       io.emit('reset drawer');
     }
-  }) 
+  })
 })
 
 http.listen(PORT, () => console.log(`Listening on ${ PORT }`))
