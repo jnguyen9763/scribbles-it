@@ -18,9 +18,9 @@ nav {
 }
 
 p {
-  font-size: 5em;
+  font-size: 6em;
   margin: 0;
-  margin-top: 3.5vh;
+  margin-top: 1.5vh;
 }
 
 #main {
@@ -132,6 +132,15 @@ canvas {
   padding: 10px 15px;
   border-radius: 5px;
   font-size: 20px;
+}
+
+#draw-score {
+  text-align: left;
+  font-family: 'Nunito', cursive;
+}
+
+hr {
+  border: 1px solid BurlyWood;
 }
 
 #chatbox {

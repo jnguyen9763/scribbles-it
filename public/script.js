@@ -22,12 +22,13 @@ socket.on('chat message', function(msg) {
 socket.on('drawer', function() {
   isDrawer = true;
   var word = words[Math.floor(Math.random() * Math.floor(words.length))];
-  alert("You are the drawer! Your word is " + word + ".");
+  drawerBox.innerHTML = "You are the drawer! Your word is <b>" + word + "</b>.";
   socket.emit('word', word);
 });
 
 socket.on('reset drawer', function() {
   isDrawer = false;
+  drawerBox.innerHTML = "You are the guesser! Guess the drawing.";
 });
 
 socket.on('clear',function() {
@@ -145,3 +146,5 @@ const eraseButton = document.querySelector('#erase-button');
 eraseButton.addEventListener('click', onErase);
 const clearButton = document.querySelector('#clear-button');
 clearButton.addEventListener('click', onClear);
+const drawerBox = document.querySelector('#drawer-box');
+const score = document.querySelector('#score');
