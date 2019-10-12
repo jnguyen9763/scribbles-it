@@ -2,8 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Mansalva&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="script.js" defer></script>
@@ -18,7 +19,14 @@
         <div id="canvas"></div>
         <div id="toolbar"></div>
       </div>
-      <div id="chatbox"></div>
+      <div id="chatbox">
+        <div class="message-box">
+          <ul id="messages"></ul>
+        </div>
+        <form>
+            <input id='text' autocomplete="off" placeholder="Guess the drawing!"/>
+        </form>
+      </div>
     </div>
   </body>
 </html>
