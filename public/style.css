@@ -76,6 +76,10 @@ canvas {
   margin: 0 0.25vw;
 }
 
+.colorbutton:focus {
+  outline: 0;
+}
+
 .brushbutton {
   cursor: pointer;
   border: none;
@@ -84,34 +88,74 @@ canvas {
   background-color: #000000;
 }
 
+.brushbutton:focus {
+  outline: 0;
+}
+
+.brushbutton:active {
+    transform: translateY(4px);
+}
+
 #blue {
   background-color: #55acee;
-  box-shadow: 0px 5px 0px 0px #3C93D5;
+  box-shadow: 0px 6px 0px 0px #3C93D5;
+}
+
+#blue:active {
+  transform: translateY(4px);
+  box-shadow: 0px 4px 0px 0px #3C93D5;
 }
 
 #green {
   background-color: #2ecc71;
-  box-shadow: 0px 5px 0px 0px #15B358;
+  box-shadow: 0px 6px 0px 0px #15B358;
+}
+
+#green:active {
+  transform: translateY(4px);
+  box-shadow: 0px 4px 0px 0px #15B358;
 }
 
 #red {
   background-color: #e74c3c;
-  box-shadow: 0px 5px 0px 0px #CE3323;
+  box-shadow: 0px 6px 0px 0px #CE3323;
 }
+
+#red:active {
+  background-color: #e74c3c;
+  transform: translateY(4px);
+  box-shadow: 0px 4px 0px 0px #CE3323;
+}
+
 
 #orange {
   background-color: #e67e22;
-  box-shadow: 0px 5px 0px 0px #CD6509;
+  box-shadow: 0px 6px 0px 0px #CD6509;
+}
+
+#orange:active {
+  transform: translateY(4px);
+  box-shadow: 0px 4px 0px 0px #CD6509;
 }
 
 #yellow {
   background-color: #f1c40f;
-  box-shadow: 0px 5px 0px 0px #D8AB00;
+  box-shadow: 0px 6px 0px 0px #D8AB00;
+}
+
+#yellow:active {
+  transform: translateY(4px);
+  box-shadow: 0px 4px 0px 0px #D8AB00;
 }
 
 #black {
   background-color: #353839;
-  box-shadow: 0px 5px 0px 0px #000000;
+  box-shadow: 0px 6px 0px 0px #000000;
+}
+
+#black:active {
+  transform: translateY(4px);
+  box-shadow: 0px 4px 0px 0px #000000;
 }
 
 #small {
@@ -131,6 +175,14 @@ canvas {
   background: url('images/eraser.png') no-repeat;
   padding: 25px;
   cursor: pointer;
+}
+
+#erase-button:active {
+  transform: translateY(4px);
+}
+
+#erase-button:focus {
+  outline: 0;
 }
 
 #clear-button {
