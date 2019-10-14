@@ -20,6 +20,7 @@ function setup() {
 
 socket.on('chat message', function(msg) {
   $('#messages').prepend($('<li>').text(msg));
+  document.getElementById('messages').scrollIntoView({ behavior: 'smooth', block: 'end' });
   messageSound.play();
 });
 
