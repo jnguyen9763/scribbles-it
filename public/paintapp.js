@@ -19,7 +19,7 @@ function setup() {
 }
 
 socket.on('chat message', function(msg) {
-  $('#messages').prepend($('<li>').text(msg));
+  $('#messages').append($('<li>').text(msg));
   document.getElementById('messages').scrollIntoView({ behavior: 'smooth', block: 'end' });
   messageSound.play();
 });
@@ -85,7 +85,7 @@ function changeColor(event) {
 
 function changeBrush(event) {
   var source = event.target;
-  
+
   if (source.id !== "brush") {
     document.getElementById("small").classList.remove("pressed");
     document.getElementById("medium").classList.remove("pressed");
