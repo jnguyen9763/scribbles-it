@@ -89,3 +89,18 @@ img {
 footer {
   color: gray;
 }
+
+@media (max-height: 700px) {
+  h1 {
+    margin-top: 0;
+    font-size: 5em;
+  }
+
+  #paint {
+    width: 40vw;
+  }
+
+  #game {
+    width: 40vw;
+  }
+}
