@@ -19,6 +19,10 @@ function setup() {
 }
 
 socket.on('chat message', function(msg) {
+  var placeholder = document.getElementById('chat-placeholder');
+  if (document.body.contains(placeholder)) {
+    placeholder.style.display = "none";
+  }
   $('#messages').append($('<li>').text(msg));
   document.getElementById('messages').scrollIntoView({ behavior: 'smooth', block: 'end' });
   messageSound.play();

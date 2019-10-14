@@ -219,7 +219,24 @@ hr {
   flex-direction: column;
 }
 
-#chat-header {
+#chat-placeholder img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#chat-placeholder p {
+  font-size: 1.5em;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  margin-top: 1vh;
+}
+
+/* #chat-header {
   margin: 2%;
   text-align: center;
   font-size: 30px;
@@ -230,7 +247,7 @@ hr {
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-}
+} */
 
 @keyframes floating {
   from { transform: translate(0,  0px); }
