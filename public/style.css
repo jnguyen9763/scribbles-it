@@ -46,7 +46,7 @@ p {
 #canvas {
   border-radius: 10px;
   flex-grow: 2;
-  height: 70vh;
+  height: 74vh;
   width: 80vw;
   box-shadow: 0 7px 7px rgba(0, 0, 0, 0.3);
 }
@@ -211,17 +211,30 @@ hr {
   border: 1px solid BurlyWood;
 }
 
-#chatbox {
+#chat-space {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+}
+
+#chat-header {
+  margin: 2% 0;
+  padding-left: 1%;
+  font-size: 20px;
+  font-family: 'Nunito', cursive;
+  background-color: #f1c40f;
+  color: white;
+  border-radius: 5px;
+  width: 17vw;
+}
+
+#chatbox {
   overflow: auto;
-  box-shadow: 2px 7px 7px rgba(0, 0, 0, 0.3);
   background-color: White;
   border-radius: 5px;
-  height: 85vh;
-  width: 20vw;
+  height: 73vh;
+  width: 17vw;
 }
+
 
 form {
   margin-top: 78vh;
@@ -233,9 +246,13 @@ form {
   border: none;
   border: 2px solid Gray;
   border-radius: 5px;
-  padding: 1.5vh;
+  padding: 1.5vh 0.5vw;
   font-size: 15px;
   width: 16vw;
+}
+
+#text:focus {
+  outline: 0;
 }
 
 #messages {
