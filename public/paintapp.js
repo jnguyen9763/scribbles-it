@@ -44,7 +44,7 @@ function message(username, color, msg) {
   if (document.body.contains(placeholder)) {
     placeholder.style.display = "none";
   }
-  $('#messages').append($('<li>').append($('<span>').css('font-weight', 'bold').css('color', color).text(username)).append($('<span>').text(": " + msg)));
+  $('#messages').append($('<li>').append($('<span>').css('font-weight', 'bold').css('color', color).text(username + ": ")).append($('<span>').text(msg)));
   document.getElementById('messages').scrollIntoView({ behavior: 'smooth', block: 'end' });
 }
 
