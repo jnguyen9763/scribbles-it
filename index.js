@@ -46,9 +46,10 @@ io.on('connection', function(socket) {
     painters.push(painter);
   })
 
-  socket.on('new player', function() {
+  socket.on('new player', function(username) {
     var player = new Object()
     player.socket = socket.id
+    player.user = username;
     player.points = 0
     players.push(player)
 
