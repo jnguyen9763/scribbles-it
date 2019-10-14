@@ -6,7 +6,7 @@ var canvasWidth = document.getElementById('canvas').clientWidth;
 var canvasHeight = document.getElementById('canvas').clientHeight;
 var canvas = null;
 var buttonSound = new Audio();
-buttonSound.src = 'images/button1.mp3';
+buttonSound.src = 'images/button.mp3';
 
 function setup() {
   canvas = createCanvas(canvasWidth, canvasHeight);
