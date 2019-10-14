@@ -203,7 +203,7 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
+  overflow: auto;
   box-shadow: 2px 7px 7px rgba(0, 0, 0, 0.3);
   background-color: White;
   border-radius: 5px;
