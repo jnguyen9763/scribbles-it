@@ -1,5 +1,7 @@
+var colors = ['#e74c3c', '#e67e22', '#f1c40f', '#2ecc71', '#55acee', '#353839'];
 var socket = io();
 var username = null;
+var myColor = colors[Math.floor(Math.random() * Math.floor(colors.length))];
 var brushColor = '#353839';
 var strokeWidth = 20;
 var canvasWidth = document.getElementById('canvas').clientWidth;
@@ -24,8 +26,8 @@ function setup() {
   socket.on('mouse', newDrawing);
 }
 
-socket.on('chat message', function(username, msg) {
-  message(username, msg);
+socket.on('chat message', function(username, color, msg) {
+  message(username, color, msg);
   messageSound.play();
 });
 
@@ -51,12 +53,12 @@ socket.on('winner', function(points) {
   socket.emit('reset game');
 });
 
-function message(username, msg) {
+function message(username, color, msg) {
   var placeholder = document.getElementById('chat-placeholder');
   if (document.body.contains(placeholder)) {
     placeholder.style.display = "none";
   }
-  $('#messages').append($('<li>').append($('<span class="bold">').text(username)).append($('<span>').text(": " + msg)));
+  $('#messages').append($('<li>').append($('<span>').css('font-weight', 'bold').css('color', color).text(username)).append($('<span>').text(": " + msg)));
   document.getElementById('messages').scrollIntoView({ behavior: 'smooth', block: 'end' });
 }
 
@@ -65,8 +67,8 @@ function sendMessage(event) {
   var msg = document.querySelector('#text').value;
   document.querySelector('#text').value = '';
   if (/\S/.test(msg) && !isDrawer) {
-    socket.emit('chat message', username, msg);
-    message("You", msg);
+    socket.emit('chat message', username, myColor, msg);
+    message("You", myColor, msg);
   }
 }
 
@@ -114,7 +116,6 @@ function changeBrush(event) {
   var source = event.target;
 
   if (source.id !== "brush") {
-    console.log('test');
     document.getElementById("small").classList.remove("pressed");
     document.getElementById("medium").classList.remove("pressed");
     document.getElementById("big").classList.remove("pressed");

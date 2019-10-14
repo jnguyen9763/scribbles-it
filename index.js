@@ -116,7 +116,7 @@ io.on('connection', function(socket) {
     }
   })
 
-  socket.on('chat message', function(username, msg) {
+  socket.on('chat message', function(username, color, msg) {
     if (msg === word) {
       for (var i = 0; i < players.length; i++) {
         if (players[i].socket == socket.id) {
@@ -126,7 +126,7 @@ io.on('connection', function(socket) {
         }
       }
     }
-    socket.broadcast.emit('chat message', username, msg)
+    socket.broadcast.emit('chat message', username, color, msg)
   })
 
   socket.on('disconnect', function() {
