@@ -1,5 +1,5 @@
 var socket = io();
-
+var username = null;
 var brushColor = '#353839';
 var strokeWidth = 20;
 var canvasWidth = document.getElementById('canvas').clientWidth;
@@ -10,26 +10,24 @@ var messageSound = new Audio();
 buttonSound.src = 'images/button.mp3';
 messageSound.src = 'images/message.mp3';
 
+window.onload = function() {
+  while(username === null) username = prompt("Enter your username");
+  socket.emit('new painter', username);
+}
+
 function setup() {
   canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent('canvas');
   background('#FFF');
-  socket.emit('new painter');
   socket.on('mouse', newDrawing);
 }
 
-socket.on('chat message', function(msg) {
-  var placeholder = document.getElementById('chat-placeholder');
-  if (document.body.contains(placeholder)) {
-    placeholder.style.display = "none";
-  }
-  $('#messages').append($('<li>').text(msg));
-  document.getElementById('messages').scrollIntoView({ behavior: 'smooth', block: 'end' });
+socket.on('chat message', function(username, msg) {
+  message(username, msg);
   messageSound.play();
 });
 
 socket.on('clear request', function() {
-  console.log('test');
   var response = confirm("Ready to clear?");
   socket.emit('clear response', response);
 });
@@ -39,12 +37,23 @@ socket.on('clear',function() {
   canvas.background('#FFF');
 });
 
+function message(username, msg) {
+  var placeholder = document.getElementById('chat-placeholder');
+  if (document.body.contains(placeholder)) {
+    placeholder.style.display = "none";
+  }
+  $('#messages').append($('<li>').text(username + ": " + msg));
+  document.getElementById('messages').scrollIntoView({ behavior: 'smooth', block: 'end' });
+}
+
 function sendMessage(event) {
   event.preventDefault();
   var msg = document.querySelector('#text').value;
   document.querySelector('#text').value = '';
-  if (/\S/.test(msg))
-    socket.emit('chat message', msg);
+  if (/\S/.test(msg)) {
+    socket.emit('chat message', username, msg);
+    message("You", msg);
+  }
 }
 
 function changeColor(event) {

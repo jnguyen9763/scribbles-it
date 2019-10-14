@@ -38,9 +38,10 @@ app.get('/paint/:id', (req, res) => res.sendFile('paint.html', {root: __dirname 
 io.on('connection', function(socket) {
   console.log('a user connected');
 
-  socket.on('new painter', function() {
+  socket.on('new painter', function(username) {
     var painter = new Object()
     painter.socket = socket.id
+    painter.user = username;
     painter.clear = null
     painters.push(painter);
   })
@@ -114,7 +115,7 @@ io.on('connection', function(socket) {
     }
   })
 
-  socket.on('chat message', function(msg) {
+  socket.on('chat message', function(username, msg) {
     if (msg === word) {
       for (var i = 0; i < players.length; i++) {
         if (players[i].socket == socket.id) {
@@ -124,7 +125,7 @@ io.on('connection', function(socket) {
         }
       }
     }
-    io.emit('chat message', msg)
+    socket.broadcast.emit('chat message', username, msg)
   })
 
   socket.on('disconnect', function() {

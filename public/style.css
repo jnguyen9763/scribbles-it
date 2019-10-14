@@ -306,3 +306,7 @@ form {
     margin-top: 0;
   }
 }
+
+.bold {
+  font-weight: bold;
+}
