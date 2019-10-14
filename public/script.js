@@ -52,7 +52,7 @@ function sendMessage(event) {
 }
 
 function changeColor(event) {
-  var source = event.target;
+  var source  = event.target;
   switch (source.id) {
     case "red":
       brushColor = '#e74c3c';

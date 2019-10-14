@@ -81,29 +81,13 @@ canvas {
   outline: 0;
 }
 
-.brushbutton {
-  cursor: pointer;
-  border: none;
-  border-radius: 100%;
-  margin: 0 0.4vw;
-  background-color: #000000;
-}
-
-.brushbutton:focus {
-  outline: 0;
-}
-
-.brushbutton:active {
-    transform: translateY(2px);
-}
-
 #blue {
   background-color: #55acee;
   box-shadow: 0px 6px 0px 0px #3C93D5;
 }
 
-#blue:active {
-  transform: translateY(4px);
+#blue:focus {
+  transform: translateY(3px);
   box-shadow: 0px 4px 0px 0px #3C93D5;
 }
 
@@ -112,8 +96,8 @@ canvas {
   box-shadow: 0px 6px 0px 0px #15B358;
 }
 
-#green:active {
-  transform: translateY(4px);
+#green:focus {
+  transform: translateY(3px);
   box-shadow: 0px 4px 0px 0px #15B358;
 }
 
@@ -122,9 +106,9 @@ canvas {
   box-shadow: 0px 6px 0px 0px #CE3323;
 }
 
-#red:active {
+#red:focus {
   background-color: #e74c3c;
-  transform: translateY(4px);
+  transform: translateY(3px);
   box-shadow: 0px 4px 0px 0px #CE3323;
 }
 
@@ -134,8 +118,8 @@ canvas {
   box-shadow: 0px 6px 0px 0px #CD6509;
 }
 
-#orange:active {
-  transform: translateY(4px);
+#orange:focus {
+  transform: translateY(3px);
   box-shadow: 0px 4px 0px 0px #CD6509;
 }
 
@@ -144,8 +128,8 @@ canvas {
   box-shadow: 0px 6px 0px 0px #D8AB00;
 }
 
-#yellow:active {
-  transform: translateY(4px);
+#yellow:focus {
+  transform: translateY(3px);
   box-shadow: 0px 4px 0px 0px #D8AB00;
 }
 
@@ -154,13 +138,27 @@ canvas {
   box-shadow: 0px 6px 0px 0px #000000;
 }
 
-#black:active {
-  transform: translateY(4px);
+#black:focus {
+  transform: translateY(3px);
   box-shadow: 0px 4px 0px 0px #000000;
 }
 
-#small {
+.brushbutton {
+  cursor: pointer;
+  border: none;
+  border-radius: 100%;
+  margin: 0 0.4vw;
+  background-color: #353839;
+}
+
+.brushbutton:focus {
+  outline: 0;
+  transform: translateY(2px);
+}
+
+#small  {
   padding: 10px;
+  box-shadow: 0px 2px 0px 0px #000000;
 }
 
 #medium {
@@ -178,12 +176,9 @@ canvas {
   cursor: pointer;
 }
 
-#erase-button:active {
-  transform: translateY(4px);
-}
-
 #erase-button:focus {
   outline: 0;
+  transform: translateY(4px);
 }
 
 #clear-button {
