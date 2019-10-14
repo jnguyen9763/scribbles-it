@@ -224,10 +224,8 @@ hr {
   text-align: center;
   font-size: 30px;
   font-family: 'Mansalva', cursive;
-  color: DimGray;
-  border-radius: 5px;
+  color: SteelBlue;
   width: 17vw;
-  text-shadow: 0 3px 0 #ccc;
   animation-name: floating;
   animation-duration: 3s;
   animation-iteration-count: infinite;
