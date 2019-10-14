@@ -6,7 +6,9 @@ var canvasWidth = document.getElementById('canvas').clientWidth;
 var canvasHeight = document.getElementById('canvas').clientHeight;
 var canvas = null;
 var buttonSound = new Audio();
+var messageSound = new Audio();
 buttonSound.src = 'images/button.mp3';
+messageSound.src = 'images/message.mp3';
 
 function setup() {
   canvas = createCanvas(canvasWidth, canvasHeight);
@@ -18,6 +20,7 @@ function setup() {
 
 socket.on('chat message', function(msg) {
   $('#messages').prepend($('<li>').text(msg));
+  messageSound.play();
 });
 
 socket.on('clear request', function() {
