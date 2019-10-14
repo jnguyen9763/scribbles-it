@@ -42,7 +42,7 @@ function message(username, msg) {
   if (document.body.contains(placeholder)) {
     placeholder.style.display = "none";
   }
-  $('#messages').append($('<li>').text(username + ": " + msg));
+  $('#messages').append($('<li>').append($('<span class="bold">').text(username)).append($('<span>').text(": " + msg)));
   document.getElementById('messages').scrollIntoView({ behavior: 'smooth', block: 'end' });
 }
 
