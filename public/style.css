@@ -172,7 +172,7 @@ canvas {
 #erase-button {
   border: none;
   background: url('images/eraser.png') no-repeat;
-  padding: 33px;
+  padding: 25px;
   cursor: pointer;
 }
 
