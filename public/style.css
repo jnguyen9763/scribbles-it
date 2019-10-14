@@ -53,6 +53,7 @@ p {
 
 canvas {
   border-radius: 10px;
+  cursor: pointer;
 }
 
 #toolbar {
@@ -93,7 +94,7 @@ canvas {
 }
 
 .brushbutton:active {
-    transform: translateY(4px);
+    transform: translateY(2px);
 }
 
 #blue {
