@@ -14,8 +14,8 @@ function setup() {
   canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent('canvas');
   background('#FFF');
-  socket.on('mouse', newDrawing);
   socket.emit('new player');
+  socket.on('mouse', newDrawing);
 }
 
 socket.on('chat message', function(msg) {

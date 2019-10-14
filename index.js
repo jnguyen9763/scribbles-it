@@ -7,9 +7,12 @@ const uuid = require('uuid/v4')
 const PORT = process.env.PORT || 5000
 
 var rooms = [];
+
 var players = [];
 var gameRunning = false;
 var word = "";
+
+var painters = [];
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -35,6 +38,13 @@ app.get('/paint/:id', (req, res) => res.sendFile('paint.html', {root: __dirname 
 io.on('connection', function(socket) {
   console.log('a user connected');
 
+  socket.on('new painter', function() {
+    var painter = new Object()
+    painter.socket = socket.id
+    painter.clear = null
+    painters.push(painter);
+  })
+
   socket.on('new player', function() {
     var player = new Object()
     player.socket = socket.id
@@ -56,6 +66,36 @@ io.on('connection', function(socket) {
   socket.on('mouse', (data) => socket.broadcast.emit('mouse', data))
   socket.on('word', (w) => word = w)
   socket.on('clear', () => io.emit('clear'))
+
+  socket.on('clear request', function() {
+    for (var i = 0; i < painters.length; i++) {
+      if (painters[i].socket !== socket.id) {
+        painters[i].clear = null;
+        socket.broadcast.to(painters[i].socket).emit('clear request')
+      }
+      else if (painters.length === 1) {
+        socket.emit('clear')
+      }
+      else {
+        painters[i].clear = true
+      }
+    }
+  })
+
+  socket.on('clear response', function(response) {
+      var ready = true;
+      for (var i = 0; i < painters.length; i++) {
+        if (painters[i].socket === socket.id) {
+          painters[i].clear = response
+        }
+        if (painters[i].clear === false || painters[i].clear === null) {
+          ready = false
+        }
+      }
+
+      if (ready) io.emit('clear')
+
+  })
 
   socket.on('reset game', function() {
     io.emit('reset drawer');
@@ -89,6 +129,13 @@ io.on('connection', function(socket) {
 
   socket.on('disconnect', function() {
     console.log('Client has disconnected');
+    for (var i = 0; i < painters.length; i++) {
+      if (painters[i].socket == socket.id) {
+        painters.splice(i, 1);
+        break;
+      }
+    }
+
     for (var i = 0; i < players.length; i++) {
       if (players[i].socket == socket.id) {
         players.splice(i, 1);

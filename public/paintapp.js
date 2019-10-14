@@ -12,11 +12,23 @@ function setup() {
   canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent('canvas');
   background('#FFF');
+  socket.emit('new painter');
   socket.on('mouse', newDrawing);
 }
 
 socket.on('chat message', function(msg) {
   $('#messages').prepend($('<li>').text(msg));
+});
+
+socket.on('clear request', function() {
+  console.log('test');
+  var response = confirm("Ready to clear?");
+  socket.emit('clear response', response);
+});
+
+socket.on('clear',function() {
+  canvas.clear();
+  canvas.background('#FFF');
 });
 
 function sendMessage(event) {
@@ -76,6 +88,10 @@ function onErase() {
   brushColor = "#FFF";
 }
 
+function onClear() {
+  socket.emit('clear request');
+}
+
 function newDrawing(data) {
   stroke(data.color);
   strokeWeight(data.strokeWidth);
@@ -111,3 +127,5 @@ const brushButton = document.querySelector('#brush');
 brushButton.addEventListener('click', changeBrush);
 const eraseButton = document.querySelector('#erase-button');
 eraseButton.addEventListener('click', onErase);
+const clearButton = document.querySelector('#clear-button');
+clearButton.addEventListener('click', onClear);
