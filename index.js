@@ -99,6 +99,7 @@ io.on('connection', function(socket) {
     if (players.length <= 1) {
       gameRunning = false;
       io.emit('reset drawer');
+      io.emit('clear');
     }
   })
 })
