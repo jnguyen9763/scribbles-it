@@ -69,7 +69,12 @@ canvas {
   margin-top: 1%;
 }
 
+.pressed {
+  transform: translateY(3px);
+}
+
 .colorbutton {
+  outline: 0;
   padding: 20px;
   cursor: pointer;
   border: none;
@@ -77,40 +82,40 @@ canvas {
   margin: 0 0.25vw;
 }
 
-.colorbutton:focus {
+/* .colorbutton:focus {
   outline: 0;
-}
+} */
 
 #blue {
   background-color: #55acee;
   box-shadow: 0px 6px 0px 0px #3C93D5;
 }
 
-#blue:focus {
+/* #blue:focus {
   transform: translateY(3px);
   box-shadow: 0px 4px 0px 0px #3C93D5;
-}
+} */
 
 #green {
   background-color: #2ecc71;
   box-shadow: 0px 6px 0px 0px #15B358;
 }
 
-#green:focus {
+/* #green:focus {
   transform: translateY(3px);
   box-shadow: 0px 4px 0px 0px #15B358;
-}
+} */
 
 #red {
   background-color: #e74c3c;
   box-shadow: 0px 6px 0px 0px #CE3323;
 }
 
-#red:focus {
+/* #red:focus {
   background-color: #e74c3c;
   transform: translateY(3px);
   box-shadow: 0px 4px 0px 0px #CE3323;
-}
+} */
 
 
 #orange {
@@ -118,30 +123,30 @@ canvas {
   box-shadow: 0px 6px 0px 0px #CD6509;
 }
 
-#orange:focus {
+/* #orange:focus {
   transform: translateY(3px);
   box-shadow: 0px 4px 0px 0px #CD6509;
-}
+} */
 
 #yellow {
   background-color: #f1c40f;
   box-shadow: 0px 6px 0px 0px #D8AB00;
 }
 
-#yellow:focus {
+/* #yellow:focus {
   transform: translateY(3px);
   box-shadow: 0px 4px 0px 0px #D8AB00;
-}
+} */
 
 #black {
   background-color: #353839;
   box-shadow: 0px 6px 0px 0px #000000;
 }
 
-#black:focus {
+/* #black:focus {
   transform: translateY(3px);
   box-shadow: 0px 4px 0px 0px #000000;
-}
+} */
 
 .brushbutton {
   cursor: pointer;
@@ -151,10 +156,10 @@ canvas {
   background-color: #353839;
 }
 
-.brushbutton:focus {
+/* .brushbutton:focus {
   outline: 0;
   transform: translateY(2px);
-}
+} */
 
 #small  {
   padding: 10px;
@@ -176,10 +181,10 @@ canvas {
   cursor: pointer;
 }
 
-#erase-button:focus {
+/* #erase-button:focus {
   outline: 0;
   transform: translateY(4px);
-}
+} */
 
 #clear-button {
   cursor: pointer;
@@ -191,11 +196,11 @@ canvas {
   box-shadow: 0px 6px 0px 0px BurlyWood;
 }
 
-#clear-button:focus {
+/* #clear-button:focus {
   transform: translateY(2px);
   box-shadow: 0px 4px 0px 0px BurlyWood;
   outline: 0;
-}
+} */
 
 #draw-score {
   text-align: left;

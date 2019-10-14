@@ -40,6 +40,13 @@ function sendMessage(event) {
 }
 
 function changeColor(event) {
+  document.getElementById("red").classList.remove("pressed");
+  document.getElementById("orange").classList.remove("pressed");
+  document.getElementById("yellow").classList.remove("pressed");
+  document.getElementById("green").classList.remove("pressed");
+  document.getElementById("blue").classList.remove("pressed");
+  document.getElementById("black").classList.remove("pressed");
+
   var source = event.target;
   switch (source.id) {
     case "red":
@@ -64,6 +71,8 @@ function changeColor(event) {
       brushColor = '#353839';
       break;
   }
+
+  source.classList.add("pressed");
 }
 
 function changeBrush(event) {
