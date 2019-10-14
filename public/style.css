@@ -220,21 +220,31 @@ hr {
 }
 
 #chat-header {
-  margin: 2% 0;
-  padding-left: 1%;
-  font-size: 20px;
-  font-family: 'Nunito', cursive;
-  background-color: #f1c40f;
-  color: white;
+  margin: 2%;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Mansalva', cursive;
+  color: DimGray;
   border-radius: 5px;
   width: 17vw;
+  text-shadow: 0 3px 0 #ccc;
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  from { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 8px); }
+  to   { transform: translate(0, -0px); }
 }
 
 #chatbox {
   overflow: auto;
   background-color: White;
   border-radius: 5px;
-  height: 73vh;
+  height: 78vh;
   width: 17vw;
 }
 
