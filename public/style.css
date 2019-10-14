@@ -70,6 +70,7 @@ canvas {
 }
 
 .pressed {
+  outline: 0;
   transform: translateY(3px);
 }
 
@@ -149,6 +150,7 @@ canvas {
 } */
 
 .brushbutton {
+  outline: 0;
   cursor: pointer;
   border: none;
   border-radius: 100%;
@@ -157,10 +159,10 @@ canvas {
   box-shadow: 0px 3px 0px 0px #000000;
 }
 
-.brushbutton:focus {
+/* .brushbutton:focus {
   outline: 0;
   transform: translateY(2px);
-}
+} */
 
 #small  {
   padding: 10px;
@@ -175,18 +177,19 @@ canvas {
 }
 
 #erase-button {
+  outline: 0;
   border: none;
   background: url('images/eraser.png') no-repeat;
   padding: 25px;
   cursor: pointer;
 }
 
-#erase-button:focus {
-  outline: 0;
+/* #erase-button:focus {
   transform: translateY(2px);
-}
+} */
 
 #clear-button {
+  outline: 0;
   cursor: pointer;
   border: none;
   font-family: 'Nunito', cursive;
@@ -196,7 +199,7 @@ canvas {
   box-shadow: 0px 6px 0px 0px BurlyWood;
 }
 
-#clear-button:focus {
+#clear-button:active {
   transform: translateY(2px);
   box-shadow: 0px 4px 0px 0px BurlyWood;
   outline: 0;
