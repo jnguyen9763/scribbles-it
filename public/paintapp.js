@@ -5,6 +5,8 @@ var strokeWidth = 20;
 var canvasWidth = document.getElementById('canvas').clientWidth;
 var canvasHeight = document.getElementById('canvas').clientHeight;
 var canvas = null;
+var buttonSound = new Audio();
+buttonSound.src = 'images/button.mp3';
 
 function setup() {
   canvas = createCanvas(canvasWidth, canvasHeight);
