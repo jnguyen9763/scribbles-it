@@ -66,6 +66,7 @@ function changeColor(event) {
     document.getElementById("green").classList.remove("pressed");
     document.getElementById("blue").classList.remove("pressed");
     document.getElementById("black").classList.remove("pressed");
+    document.getElementById("erase-button").classList.remove("pressed");
 
     switch (source.id) {
       case "red":
@@ -97,23 +98,40 @@ function changeColor(event) {
 
 function changeBrush(event) {
   var source = event.target;
-  switch (source.id) {
-    case "small":
-      strokeWidth = 20;
-      break;
-    case "medium":
-      strokeWidth = 30;
-      break;
-    case "big":
-      strokeWidth = 40;
-      break;
-    default:
-      strokeWidth = 20;
-      break;
+
+  if (source.id !== "brush") {
+    console.log('test');
+    document.getElementById("small").classList.remove("pressed");
+    document.getElementById("medium").classList.remove("pressed");
+    document.getElementById("big").classList.remove("pressed");
+
+    switch (source.id) {
+      case "small":
+        strokeWidth = 20;
+        break;
+      case "medium":
+        strokeWidth = 30;
+        break;
+      case "big":
+        strokeWidth = 40;
+        break;
+      default:
+        strokeWidth = 20;
+        break;
+    }
+
+    source.classList.add("pressed");
   }
 }
 
 function onErase() {
+  document.getElementById("red").classList.remove("pressed");
+  document.getElementById("orange").classList.remove("pressed");
+  document.getElementById("yellow").classList.remove("pressed");
+  document.getElementById("green").classList.remove("pressed");
+  document.getElementById("blue").classList.remove("pressed");
+  document.getElementById("black").classList.remove("pressed");
+  document.getElementById("erase-button").classList.add("pressed");
   brushColor = "#FFF";
 }
 
