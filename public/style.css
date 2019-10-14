@@ -154,16 +154,16 @@ canvas {
   border-radius: 100%;
   margin: 0 0.4vw;
   background-color: #353839;
+  box-shadow: 0px 3px 0px 0px #000000;
 }
 
-/* .brushbutton:focus {
+.brushbutton:focus {
   outline: 0;
   transform: translateY(2px);
-} */
+}
 
 #small  {
   padding: 10px;
-  box-shadow: 0px 2px 0px 0px #000000;
 }
 
 #medium {
@@ -181,10 +181,10 @@ canvas {
   cursor: pointer;
 }
 
-/* #erase-button:focus {
+#erase-button:focus {
   outline: 0;
-  transform: translateY(4px);
-} */
+  transform: translateY(2px);
+}
 
 #clear-button {
   cursor: pointer;
@@ -196,11 +196,11 @@ canvas {
   box-shadow: 0px 6px 0px 0px BurlyWood;
 }
 
-/* #clear-button:focus {
+#clear-button:focus {
   transform: translateY(2px);
   box-shadow: 0px 4px 0px 0px BurlyWood;
   outline: 0;
-} */
+}
 
 #draw-score {
   text-align: left;
