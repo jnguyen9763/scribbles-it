@@ -119,7 +119,7 @@ io.on('connection', function(socket) {
   socket.on('chat message', function(username, color, msg) {
     if (msg === word) {
       for (var i = 0; i < players.length; i++) {
-        if (players[i].socket == socket.id) {
+        if (players[i].socket === socket.id) {
           players[i].points += 5;
           socket.emit('winner', players[i].points);
           break;
